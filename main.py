@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 
+from api.shoppinglist import shoppinglist_route
+
 app = FastAPI(
     title="Shopping List Fast API",
     description="API for shopping list",
@@ -12,6 +14,8 @@ app = FastAPI(
         "name": "MIT",
     },
 )
+
+app.include_router(shoppinglist_route.router)
 
 @app.get("/")
 async def index() -> str:
