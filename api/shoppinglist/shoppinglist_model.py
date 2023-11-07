@@ -1,4 +1,4 @@
-from typing import List
+from typing import Optional
 
 from pydantic import BaseModel
 
@@ -8,4 +8,4 @@ class ShoppingList(BaseModel):
     """
     name: str
     is_active: bool
-    # items: List[str]
+    items: Optional[dict]

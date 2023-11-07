@@ -7,7 +7,6 @@ from api.shoppinglist.shoppinglist_model import ShoppingList
 
 router = APIRouter()
 
-
 shoppinglists = []
 
 
@@ -17,6 +16,15 @@ async def get_shoppinglists() -> List[ShoppingList]:
     Return shopping lists
     """
     return shoppinglists
+
+@router.get("/shoppinglists/{id}", response_model=List[ShoppingList])
+async def get_shoppinglist(id: int) -> List[ShoppingList]:
+    """
+    Return shopping lists
+    """
+    if not shoppinglists:
+        return [] 
+    return shoppinglists[id]
 
 
 @router.post("/shoppinglists", response_model=List[ShoppingList])
