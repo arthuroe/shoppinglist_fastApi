@@ -17,6 +17,7 @@ app = FastAPI(
 
 app.include_router(shoppinglist_route.router)
 
+
 @app.get("/")
 async def index() -> str:
     """
