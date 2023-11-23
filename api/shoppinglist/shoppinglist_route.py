@@ -2,7 +2,7 @@ from typing import List
 
 from fastapi import APIRouter
 
-from api.shoppinglist.shoppinglist_model import ShoppingList
+from api.shoppinglist.shoppinglist_schema import ShoppingList
 
 
 router = APIRouter()
